@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="">
+    <head>
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+        <link rel="icon" href="<%= BASE_URL %>favicon.ico" />
+        <title><%= htmlWebpackPlugin.options.title %></title>
+        <script>
+            // 1. 获取设配的屏幕宽度
+            var width = document.documentElement.clientWidth || document.body.clientWidth;
+            // 2. 计算宽度比例（开发环境是基于iPhone 6/7/8的375宽度）
+            var ratio = width / 375;
+            // 3. 基于100px进行放大或则缩小，因为开发时设置的rem基于100px
+            var fontSize = 100 * ratio;
+            // 4. 给html设置fontSize样式属性
+            document.getElementsByTagName('html')[0].style.fontSize = fontSize + 'px';
+        </script>
+    </head>
+    <body>
+        <noscript>
+            <strong
+                >We're sorry but <%= htmlWebpackPlugin.options.title %> doesn't work properly
+                without JavaScript enabled. Please enable it to continue.</strong
+            >
+        </noscript>
+        <div id="app"></div>
+        <!-- built files will be auto injected -->
+    </body>
+</html>
